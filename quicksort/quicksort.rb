@@ -29,4 +29,18 @@ class Quicksort
     largest = list.pop()
     largest > find_largest(list) ? largest : find_largest(list)
   end
+
+  # Quicksort Code(converted to Ruby)
+
+  def quickly_sort(list)
+    return list if list.length < 2
+    
+    pivot = list.first
+    less = list.filter_map { |num| num if num < pivot}
+    more = list.filter_map { |num| num if num > pivot}
+
+    (quickly_sort(less) + [pivot] + quickly_sort(more))
+  end
+
+
 end

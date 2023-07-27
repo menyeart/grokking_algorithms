@@ -29,5 +29,13 @@ RSpec.describe "Quicksort" do
       expect(sort.find_largest([1])).to eq(1)
       expect(sort.find_largest([-1,-2,-3])).to eq(-1)
     end
+
+    it "can sort an array of numbers (quickly)" do
+      sort = Quicksort.new
+
+      expect(sort.quickly_sort([5,4,3,2,1])).to eq([1,2,3,4,5])
+      expect(sort.quickly_sort([-6,-2,3,4,9])).to eq([-6,-2,3,4,9])
+      expect(sort.quickly_sort([1])).to eq([1])
+    end
   end
 end
